@@ -51,11 +51,12 @@
   let year = randomDate.getFullYear();
   let day = randomDate.getDate();
   let month = randomDate.getMonth() + 1;
-  let doomsday = month > 2
-        ? regDoomsdays[month]
-        : isleapyear()
-        ? leapJANFEBDoomsdays[month]
-        : regJANFEBDoomsdays[month];
+  let doomsday =
+    month > 2
+      ? regDoomsdays[month]
+      : isleapyear()
+      ? leapJANFEBDoomsdays[month]
+      : regJANFEBDoomsdays[month];
   let doomsdayDistance: number;
 </script>
 
@@ -77,7 +78,7 @@
     </li>
   </ol>
   <h3>Step 2:</h3>
-  <span>Find the anchor day for {randomDate.getFullYear()}</span>
+  <span>Find the anchor day for {year}</span>
   <ol>
     <li>Take last digits {yearD}</li>
     <li>
@@ -134,9 +135,18 @@
   <h3>Step 4:</h3>
   <span>Calculate day of the week</span>
   <ol>
-	<li>Find distance to doomsday; {day}-{doomsday} = {doomsdayDistance=day-doomsday}</li>
-	<li>Find {doomsdayDistance}mod7 = {doomsdayDistance%=7}</li>
-	<li>Add to anchor day; {doomsdayDistance}+{anchorDay} = {doomsdayDistance+=anchorDay}</li>
-	<li>Therefore the weekday is {doomsdayDistance}mod7 = {doomsdayDistance%7} = {days[doomsdayDistance%7]}</li>
+    <li>
+      Find distance to doomsday; {day}-{doomsday} = {(doomsdayDistance =
+        day - doomsday)}
+    </li>
+    <li>Find {doomsdayDistance}mod7 = {(doomsdayDistance %= 7)}</li>
+    <li>
+      Add to anchor day; {doomsdayDistance}+{anchorDay} = {(doomsdayDistance +=
+        anchorDay)}
+    </li>
+    <li>
+      Therefore the weekday is {doomsdayDistance}mod7 = {doomsdayDistance % 7} =
+      {days[doomsdayDistance % 7]}
+    </li>
   </ol>
 </div>

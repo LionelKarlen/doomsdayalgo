@@ -1,48 +1,180 @@
-# Svelte + TS + Vite
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-## Need an official Svelte framework?
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
 
-## Technical considerations
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/LionelKarlen/doomsdayalgo">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-**Why use this over SvelteKit?**
+<h3 align="center">DoomsdayAlgo</h3>
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
+  <p align="center">
+  Practise your doomsday skills
+    <br />
+    <a href="https://github.com/LionelKarlen/doomsdayalgo">View Site</a>
+    ·
+    <a href="https://github.com/LionelKarlen/doomsdayalgo/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/LionelKarlen/doomsdayalgo/issues">Request Feature</a>
+  </p>
+</div>
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
 
-**Why include `.vscode/extensions.json`?**
+[![Product Name Screen Shot][product-screenshot]]([product-screenshot])
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+<!-- ABOUT THE PROJECT -->
+## About The Project
+A very hacky application to practise the doomsday algorithm, along with a step by step breakdown.
 
-**Why enable `allowJs` in the TS template?**
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-**Why is HMR not preserving my local component state?**
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+### Built With
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+* [Vite](https://vitejs.dev/)
+* [Svelte](https://svelte.dev/)
+* [Tailwindcss](https://tailwindcss.com/)
+* [Daisyui](https://daisyui.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these steps.
+
+### Prerequisites
+
+While it isn't strictly necessary, it is preferred to use yarn.
+* yarn 
+  ```sh
+  npm i -g corepack && corepack enable
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/LionelKarlen/doomsdayalgo.git
+   ```
+2. Install packages
+   ```sh
+   yarn
+   ```
+3. Run dev server 
+   ```sh
+   yarn dev
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+See the [open issues](https://github.com/LionelKarlen/doomsdayalgo/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See [`LICENSE.txt`](./LICENSE.txt) for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Readme Template](https://github.com/othneildrew/Best-README-Template)
+* [Doomsday wiki page](https://en.wikipedia.org/wiki/Doomsday_rule)
+* [Numberphile Doomsday video](https://www.youtube.com/watch?v=z2x3SSBVGJU)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[stars-shield]: https://img.shields.io/github/stars/LionelKarlen/doomsdayalgo.svg?style=for-the-badge
+[stars-url]: https://github.com/LionelKarlen/doomsdayalgo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LionelKarlen/doomsdayalgo.svg?style=for-the-badge
+[issues-url]: https://github.com/LionelKarlen/doomsdayalgo/issues
+[license-shield]: https://img.shields.io/github/license/LionelKarlen/doomsdayalgo.svg?style=for-the-badge
+[license-url]: https://github.com/LionelKarlen/doomsdayalgo/blob/master/LICENSE.txt
+[product-screenshot]: images/screenshot.png

@@ -19,7 +19,7 @@
 
 <main class="flex justify-center p-20">
   <div class="prose wrapper flex flex-col justify-self-center">
-    <div class="flex flex-row justify-center toolbar gap-6">
+    <div class="flex flex-row justify-center items-end toolbar gap-6">
       <div class="flex flex-col">
         <label for="minYear">minYear</label>
         <input
@@ -66,7 +66,7 @@
         showsolution = !showsolution;
       }}
     >
-      {showsolution?"Hide solution":"Show solution"}
+      {showsolution ? "Hide solution" : "Show solution"}
     </button>
     <div class="mt-20">
       {#if showsolution}
@@ -77,12 +77,13 @@
 </main>
 
 <style>
-	.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+  .no-spin::-webkit-inner-spin-button,
+  .no-spin::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
-}
+  }
 
-.no-spin {
-    -moz-appearance:textfield !important;
-}
+  .no-spin {
+    -moz-appearance: textfield !important;
+  }
 </style>
