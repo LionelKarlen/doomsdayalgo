@@ -32,7 +32,7 @@
   <p align="center">
   Practise your doomsday skills
     <br />
-    <a href="https://github.com/LionelKarlen/doomsdayalgo">View Site</a>
+    <a href="https://lionelkarlen.github.io/doomsdayalgo/">View Site</a>
     ·
     <a href="https://github.com/LionelKarlen/doomsdayalgo/issues">Report Bug</a>
     ·
