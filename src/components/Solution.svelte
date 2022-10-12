@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { listen } from "svelte/internal";
+
   export let randomDate: Date;
 
   const days = [
@@ -42,8 +44,20 @@
     randomDate.getFullYear().toString().slice(2)
   );
   function isleapyear() {
-    let year = randomDate.getFullYear();
-    return year % 4 == 0 && year % 100 == 0 && year % 400 == 0;
+    return (
+      (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) ||
+      (year % 4 == 0 && year % 100 > 0)
+    );
+  }
+  function getFinalDoomsdayDistance() {
+    let finalYearD = yearD % 2 == 0 ? yearD : yearD + 11;
+    finalYearD /= 2;
+    finalYearD = finalYearD % 2 == 0 ? finalYearD : finalYearD + 11;
+    finalYearD %= 7;
+    finalYearD = 7 - finalYearD;
+    let finalAnchorDay = (finalYearD + finalYearC) % 7;
+    let finalDoomsdayDistance = (day - doomsday) % 7;
+    return finalDoomsdayDistance + finalAnchorDay;
   }
   let runningYearD = yearD;
   let finalYearC = days.findIndex((v) => v == centuryAnchorIndecies[yearC % 4]);
@@ -51,13 +65,15 @@
   let year = randomDate.getFullYear();
   let day = randomDate.getDate();
   let month = randomDate.getMonth() + 1;
-  let doomsday =
+  let doomsday: number =
     month > 2
       ? regDoomsdays[month]
       : isleapyear()
       ? leapJANFEBDoomsdays[month]
       : regJANFEBDoomsdays[month];
   let doomsdayDistance: number;
+  let finalDoomsdayDistance: number = getFinalDoomsdayDistance();
+  let normalisedDoomsdayDistance: number = finalDoomsdayDistance<0?7+finalDoomsdayDistance:finalDoomsdayDistance;
 </script>
 
 <div>
@@ -98,6 +114,8 @@
       Count forwards {runningYearD} days from century anchor {finalYearC}; ({runningYearD}+{finalYearC})mod7={(anchorDay =
         (runningYearD + finalYearC) % 7)}
     </li>
+    {anchorDay}
+    {typeof anchorDay}
     <li>
       Therefore anchor day for {yearC}{yearD} is {anchorDay}
       = {days[anchorDay]}
@@ -144,9 +162,12 @@
       Add to anchor day; {doomsdayDistance}+{anchorDay} = {(doomsdayDistance +=
         anchorDay)}
     </li>
+    {#if finalDoomsdayDistance < 0}
+      <li>{finalDoomsdayDistance} is equal to +{7+finalDoomsdayDistance}</li>
+    {/if}
     <li>
-      Therefore the weekday is {doomsdayDistance}mod7 = {doomsdayDistance % 7} =
-      {days[doomsdayDistance % 7]}
+      Therefore the weekday is {normalisedDoomsdayDistance}mod7 = {normalisedDoomsdayDistance% 7} =
+      {days[normalisedDoomsdayDistance % 7]}
     </li>
   </ol>
 </div>
