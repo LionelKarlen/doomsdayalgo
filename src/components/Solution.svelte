@@ -114,8 +114,6 @@
       Count forwards {runningYearD} days from century anchor {finalYearC}; ({runningYearD}+{finalYearC})mod7={(anchorDay =
         (runningYearD + finalYearC) % 7)}
     </li>
-    {anchorDay}
-    {typeof anchorDay}
     <li>
       Therefore anchor day for {yearC}{yearD} is {anchorDay}
       = {days[anchorDay]}
